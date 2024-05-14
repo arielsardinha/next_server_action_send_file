@@ -9,7 +9,6 @@ export default function Home() {
 
     const name_todo = (event.target as HTMLFormElement).elements.namedItem('name_todo') as HTMLInputElement;
 
-    console.log(name_todo.value);
     try {
 
       await onCreateTodoAction({ dueDate: new Date(), title: name_todo.value });
@@ -22,11 +21,6 @@ export default function Home() {
       <label>
         Nome da tarefa:
         <input type="text" name="name_todo" />
-      </label>
-      <br />
-      <label>
-        Enviar arquivo:
-        <input type="file" name="name_todo" />
       </label>
 
       <input type="submit" value="Enviar" />
