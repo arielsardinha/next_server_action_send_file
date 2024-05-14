@@ -33,11 +33,12 @@ export class RepositoryTodo {
         return await response.json();
     }
 
-    async findAllTodo(): Promise<ResponseTodos> {
+    async findAllTodo(): Promise<ResponseTodos[]> {
         const response = await fetch(`${this.BASE_URL}/todos`);
         if (!response.ok) {
             throw '';
         }
+      
         return await response.json();
     }
 
