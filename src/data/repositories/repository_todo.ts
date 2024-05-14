@@ -1,7 +1,6 @@
 export interface CreateTodoRequest {
     title: string;
     dueDate: Date;
-    file: File;
 }
 
 export interface ResponseTodos {
@@ -17,8 +16,7 @@ export interface ResponseTodos {
 
 export class RepositoryTodo {
     private BASE_URL = 'https://alunos.treinaweb.com.br/tw-todos/api/v1';
-    async createTodo({ dueDate, title, file }: CreateTodoRequest): Promise<ResponseTodos> {
-        console.log(file);
+    async createTodo({ dueDate, title }: CreateTodoRequest): Promise<ResponseTodos> {
         const response = await fetch(`${this.BASE_URL}/todos`, {
             method: 'POST',
             headers: {
